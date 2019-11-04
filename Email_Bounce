@@ -1,0 +1,116 @@
+SELECT
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 1300
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'yahoo.com'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+
+UNION ALL
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 12000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'yahoo.com.br'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+
+UNION ALL
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 12000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'uol.com.br'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+
+UNION ALL
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 20000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'gmail.com'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+ 
+UNION ALL
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 3000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'terra.com.br'
+  AND status = 'delivered'
+  ORDER BY RAND()
+)
+
+UNION ALL
+
+
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 4000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'bol.com.br'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+
+UNION ALL
+
+SELECT 
+  b.email,
+  b.dominio,
+  b.status
+FROM [Base Total] b
+Where b.email IN (
+  SELECT top 4000
+    email
+  FROM [Base Total] 
+  WHERE dominio = 'ig.com.br'
+  AND (status IS NULL OR status NOT in ('Hard Bounce', 'notSent', 'Mailbox Full'))
+  ORDER BY RAND()
+)
+  
+
+
+
+  
